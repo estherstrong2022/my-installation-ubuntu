@@ -1,11 +1,15 @@
+For Nodes
 kubeadm is showing [ERROR CRI]:
+Reading state information... Done
+E: Unable to locate package kubelet
+E: Unable to locate package kubeadm
+E: Unable to locate package kubectl
+
 solution
 rm /etc/containerd/config.toml
 systemctl restart containerd
-kubeadm init
 
-
-kubernestes cluster errors
+OR
 
 sudo rm -rf /usr/share/keyrings/cloud.google.gpg
 sudo rm -rf /usr/share/keyrings/cloud.google.gpg
@@ -18,3 +22,10 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+
+
+For Master
+rm /etc/containerd/config.toml
+systemctl restart containerd
+kubeadm init
+
