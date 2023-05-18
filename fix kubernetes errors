@@ -1,0 +1,20 @@
+kubeadm is showing [ERROR CRI]:
+solution
+rm /etc/containerd/config.toml
+systemctl restart containerd
+kubeadm init
+
+
+kubernestes cluster errors
+
+sudo rm -rf /usr/share/keyrings/cloud.google.gpg
+sudo rm -rf /usr/share/keyrings/cloud.google.gpg
+sudo rm -rf /etc/apt/sources.list.d/google-cloud-sdk.list
+
+OR
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
